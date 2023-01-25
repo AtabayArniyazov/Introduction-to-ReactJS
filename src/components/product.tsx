@@ -12,16 +12,11 @@ export function Product({ product }: ProductProps) {
             <img src={product.image} className="w-1/6" alt={product.title}></img>
             <p>{ product.title }</p>
             <p className="font-bold">{ product.price }</p>
-            {!details && <button
+            <button
                 className="py-2 px-4 border bg-yellow-400"
-                onClick={() => setDetails(true)}>
+                onClick={() => setDetails((prevState) => !prevState)}>
                 Show details
-            </button>}
-            {details && <button
-                className="py-2 px-4 border bg-blue-400"
-                onClick={() => setDetails(false)}>
-                Hide details
-            </button>}
+            </button>
             {details && <div>
                 <p>
                     {product.description}

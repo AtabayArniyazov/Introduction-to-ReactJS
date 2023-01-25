@@ -6,6 +6,8 @@ interface ProductProps {
 }
 export function Product({ product }: ProductProps) {
     const [details, setDetails] = useState(false);
+    const buttonBgClassName = details ? 'bg-yellow-400' : 'bg-blue-400';
+    const buttonClasses = ['py-2 px-4 border', buttonBgClassName];
 
     return (
         <div className="border py-2 px-4 rounded flex flex-col items-center mb-2">
@@ -13,7 +15,7 @@ export function Product({ product }: ProductProps) {
             <p>{ product.title }</p>
             <p className="font-bold">{ product.price }</p>
             <button
-                className="py-2 px-4 border bg-yellow-400"
+                className={ buttonClasses.join(' ') }
                 onClick={() => setDetails((prevState) => !prevState)}>
                 { `${details ? 'Hide' : 'Show'} details` }
             </button>

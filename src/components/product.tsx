@@ -23,7 +23,7 @@ export function Product({ product }: ProductProps) {
                 {product.description}
                 <br/>
                 <br/>
-                <p>Rate: <span style={{ fontWeight: 'bold' }}>{ product.rating.rate }</span></p>
+                <p>Rate: <span style={{ fontWeight: 'bold' }}>{ product.rating?.rate }</span></p>
             </div>}
         </div>
     )

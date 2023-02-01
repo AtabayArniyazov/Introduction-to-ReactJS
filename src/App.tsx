@@ -4,6 +4,7 @@ import { useProducts } from "./hooks/products";
 import { Loader } from "./components/loader";
 import { ErrorMessage } from "./components/errorMessage";
 import { Modal } from "./components/modal";
+// import { CreateProduct } from "./components/createProduct";
 
 function App() {
     const { products, loading, error } = useProducts();
@@ -15,7 +16,9 @@ function App() {
             { error &&  <ErrorMessage error={error} />}
             { !loading &&  products.map((product) => <Product product={product} key={product.id} />) }
 
-            <Modal/>
+            <Modal title="Create New Product">
+                {/*<CreateProduct/>*/}
+            </Modal>
         </div>
     );
 }
